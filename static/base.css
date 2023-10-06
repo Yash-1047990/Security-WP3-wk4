@@ -1,0 +1,320 @@
+body {
+  background-color: #f8f5ee;
+}
+
+#top-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  background-color: #c93a3a;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.logo {
+  height: 40px;
+  width: 40px;
+  position: fixed;
+  z-index: 2;
+  left: 65px;
+  top: 16px;
+}
+
+form {
+  position: absolute;
+  top: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+form div {
+  display: flex;
+  align-items: center;
+}
+
+#search-bar {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-right: 10px;
+  flex: 1;
+}
+
+#search-button {
+  padding: 10px;
+  background-color: #cc0033;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Style for side navigation bar */
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color:  #6E001C;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+/*the contents of the navigation bar*/
+.sidenav a {
+  padding: 15px 15px 15px 32px;
+  font-family: Poppins, sans-serif;
+  text-decoration: none;
+  font-size: 20px;
+  color: #f8f5ee;
+  display: block;
+  transition: 0.3s;
+  align-items: center;
+  background-color: transparent;
+  opacity: 0;
+  
+}
+
+/*when you hover over the buttons to other pages*/
+.sidenav a:hover {
+  color: #e6b1b1;
+  background-color: #530115;
+}
+
+/* Style for when side navigation is open */
+.sidenav-open {
+  width: 250px;
+}
+
+
+/* Style for main content */
+.main-content {
+  transition: margin-left .5s;
+  padding: 20px;
+  padding-top: 100px;
+  margin-left: 0;
+  margin-top: 30px;
+}
+/* Style for when main content has shifted */
+.main-content-open {
+  margin-left: 250px;
+}
+
+
+/* Style for button to open menu */
+#menu-toggle {
+  position: fixed;
+  top: 15px;
+  left: 20px;
+  z-index: 2;
+  background: none;
+  border: none;
+  font-size: 30px;
+  color: black;
+  cursor: pointer;
+  outline: none;
+}
+
+
+
+#class-table {
+  border: 1px solid black;
+  width: 50%;
+  margin: 0 auto;
+}
+
+#class-table th,
+#class-table td {
+  padding: 10px;
+  text-align: center;
+  font-size: 16px;
+}
+
+#class-table th {
+  background-color: #e26969;
+}
+
+#class-table tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.logout-button {
+  position: absolute;
+  top: 17px;
+  right: 10px;
+  background-color: #cc0033;
+  color: white;
+  border: none;
+  padding: 7px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.logout-button:hover {
+  background-color: #9e0128;
+}
+
+#create-meeting-form {
+  display: none;
+  position: absolute;
+  margin-top: 30px;
+  padding: 30px;
+  border: 1px solid #f44336; /* Red border */
+  border-radius: 10px;
+  background-color: #ffebee; /* Light red background */
+  color: #f44336; /* Red text color */
+}
+
+
+
+#create-meeting-form label {
+  display: block;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+#create-meeting-form input[type="text"],
+#create-meeting-form select {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  border: 1px solid #f44336; /* Red border */
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+#create-meeting-form input[type="time"],
+#create-meeting-form input[type="date"] {
+  width: 50%;
+  padding: 10px;
+  margin-top: 5px;
+  margin-bottom: 20px;
+  border: 1px solid #f44336; /* Red border */
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+#create-meeting-form input[type="submit"] {
+  background-color: #f44336; /* Red button color */
+  color: #fff; /* White button text color */
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#create-meeting-form input[type="submit"]:hover {
+  background-color: #d32f2f; /* Darker red on hover */
+}
+
+/* Display start time, end time, and date fields next to each other */
+#create-meeting-form div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#create-meeting-form div > div {
+  flex: 1;
+  margin-right: 10px;
+}
+
+/*just turns things hidden*/
+.hidden {
+  display: none;
+}
+/*css for the popup and the closing of it*/
+#popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  border: 1px solid black;
+  padding: 10px;
+}
+/*the close button for the pop up: students in a class*/
+#close {
+  float: right;
+  cursor: pointer;
+}
+
+.popup-meeting-created {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  background-color: #ff6961;
+  color: #fff;
+  border: 4px solid #333;
+  border-radius: 10px;
+  z-index: 9999;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.popup-attendance {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 9999;
+}
+
+.popup-content-attendance {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  max-width: 600px;
+  background-color: #c93a3a;
+  padding: 20px;
+  box-sizing: border-box;
+  border-radius: 10px;
+  border: 5px;
+  border-color: #530115;
+}
+
+.close-btn-attendance {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 40px;
+  cursor: pointer;
+}
+
+.present-list{
+  width: 50%;
+  float: right;
+  text-align: center;
+}
+
+.absent-list{
+  width: 50%;
+  float: left;
+  text-align: center;
+}
+
+.Attendance-h3{
+  text-align: center;
+}

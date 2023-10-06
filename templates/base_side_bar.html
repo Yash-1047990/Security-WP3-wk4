@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Side Navigation Bar</title>
+  <link rel="stylesheet" type="text/css" href="../static/base.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="../static/navbar.js"></script>
+</head>
+<body>
+  
+  <a href="/">
+    <img class="logo" src="../static/HR_LOGO.png">
+  </a>
+
+  <div id="top-bar">
+    <a href="/logout" class="logout-button">Logout</a>
+  </div>
+
+  <button id="menu-toggle">&#9776;</button>
+  <div class="sidenav">
+    <a href="#" id="previous-meetings-button"> &#9818; Previous meetings</a>
+    <a href="#" id="create-meetings-button"> &#9822; Create meeting</a>
+    <a href="#" id="class-button"> &#9820; Classes</a>
+  </div>
+
+<div id=" Moving-content">
+  <form>
+    <div>
+      <input type="text" id="search-bar" placeholder="Search...">
+      <button type="submit" id="search-button">Search</button>
+    </div>
+  </form>
+
+  <div class="main-content">
+  </div>
+
+  <form id="create-meeting-form">
+    <label for="class">Class:</label>
+    <select id="class" name="class" required>
+      <option value="">Choose a class</option>
+    </select>
+  
+    <div>
+      <label for="start-time-input">Start Time:</label>
+      <input type="time" id="start-time-input" name="start-time" required>
+    </div>
+  
+    <div>
+      <label for="end-time-input">End Time:</label>
+      <input type="time" id="end-time-input" name="end-time" required>
+    </div>
+  
+    <div>
+      <label for="date-input">Date:</label>
+      <input type="date" id="date-input" name="date" required>
+    </div>
+  
+    <div>
+      <label for="subject-input">Subject:</label>
+      <input type="text" id="subject-input" name="subject" required>
+    </div>
+  
+    <div>
+      <label for="teacher-input">Teacher:</label>
+      <input type="text" id="teacher-input" name="teacher" required>
+    </div>
+  
+    <div>
+      <label for="classroom-select">Classroom:</label>
+      <select id="classroom-select" name="classroom" required>
+        <option value="">Choose a classroom</option>
+        <option value="MP.H02.023">MP.H02.023</option>
+        <option value="MP.H05.030">MP.H05.030</option>
+        <option value="MP.H05.031">MP.H05.031</option>
+        <option value="Online">Online</option>
+      </select>
+    </div>
+  
+    <div>
+      <input type="submit" id="submit-meeting-button" value="Create Meeting">
+    </div>
+  </form>
+</div>
+
+
+</body>
+</html>

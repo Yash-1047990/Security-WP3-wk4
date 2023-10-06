@@ -1,0 +1,101 @@
+
+Here are the links to sources that have been used to aid us in to making this website:
+https://youtu.be/-XchxUQTcfQ
+https://youtu.be/PIKrh5ofQF0
+https://stackoverflow.com/questions/35307676/check-login-status-flask
+https://codeshack.io/login-system-python-flask-mysql/
+https://www.w3schools.com/jquery/jquery_hide_show.asp
+https://api.jquery.com/toggleclass/
+https://www.w3schools.com/tags/ref_attributes.asp
+https://www.w3schools.com/icons/default.asp
+https://www.w3schools.com/html/html_classes.asp
+https://www.topjavatutorial.com/jquery/jquery-if-else/
+https://www.w3schools.com/jquery/jquery_css_classes.asp
+http://api.jquery.com/append/
+https://youtu.be/QhQ4m5g2fhA
+https://youtu.be/fEYx8dQr_cQ
+https://youtu.be/byYKGWIXMGU
+https://youtu.be/CwY31BbNFPM
+https://youtu.be/J5bIPtEbS0Q
+https://youtu.be/FIOUr-XUSV8
+https://stackoverflow.com/questions/1349404/generate-random-string-characters-in-javascript
+https://developer.mozilla.org/en-US/docs/Web/API/setInterval
+https://stackoverflow.com/questions/5331894/i-cant-get-pythons-executemany-for-sqlite3-to-work-properly
+https://stackoverflow.com/questions/6910349/hiding-table-data-using-div-style-displaynone
+https://stackoverflow.com/questions/3065342/how-do-i-iterate-through-table-rows-and-cells-in-javascript
+https://developer.mozilla.org/en-US/docs/Web/HTML/Element/tr
+https://youtu.be/jCnldI4uIDE
+https://www.techonthenet.com/sqlite/joins.php
+https://stackoverflow.com/questions/23750152/multiple-functions-in-one-setinterval
+
+24 hours js boek
+
+
+
+Here is also a collection of SQL code that has been used:
+
+
+CREATE TABLE Meetings (
+meeting_id INTEGER PRIMARY KEY AUTOINCREMENT,
+teacher STRING REFERENCES Users(username)
+subject varchar(50) NOT NULL,
+
+--SQLite
+CREATE TABLE Class (
+ClassName STRING PRIMARY KEY NOT NULL,
+SLCer STRING REFERENCES Users(username) NOT NULL
+);
+
+INSERT INTO Users(username, password, IsSLC)
+VALUES("Sander Sas", "hoi", "1") 
+
+INSERT INTO Class(ClassName, SLCer)
+VALUES("RAC22-SWDVT1C", "Sander Sas")
+
+--SQLite
+CREATE TABLE Students(
+id INTEGER PRIMARY KEY NOT NULL,
+Name STRING NOT NULL, 
+Class STRING REFERENCES Class(ClassName) NOT NULL
+);
+
+DROP TABLE Students;
+
+
+CREATE TABLE Meetings (
+meeting_id INTEGER PRIMARY KEY AUTOINCREMENT,
+start_time TIME NOT NULL,
+end_time TIME NOT NULL,
+date DATE NOT NULL,
+subject STRING NOT NULL,
+teacher STRING REFERENCES Users(username) not NULL,
+class STRING  REFERENCES Class(Classname) NOT NULL,
+classroom STRING 
+);
+
+CREATE TABLE Attendance (
+    meeting_id INTEGER,
+    student_id INTEGER,
+    present BOOLEAN,
+    FOREIGN KEY (meeting_id) REFERENCES Meetings(meeting_id),
+    FOREIGN KEY (student_id) REFERENCES Students(id)
+);
+
+INSERT INTO Students(id, Name, Class)
+VALUES("1054233", "Muhammed Güveç", "RAC22-SWDVT1C")
+
+INSERT INTO Students(id, Name, Class)
+VALUES("1047990", "Yash Ramcharan", "RAC22-SWDVT1C")
+
+INSERT INTO Students(id, Name, Class)
+VALUES("1064129", "Arwand Peters", "RAC22-SWDVT1C")
+
+INSERT INTO Students(id, Name, Class)
+VALUES("1063280", "Kadir Ünal", "RAC22-SWDVT1C")
+
+INSERT INTO Students(id, Name, Class)
+VALUES("1053287", "Aaron Euser", "RAC22-SWDVT1C")
+
+INSERT INTO Meetings(start_time, end_time, date, subject, teacher, class, classroom)
+VALUES('10:50', '11:50', '2023-7-24', 'Werkplaats 3', 'mo', 'RAC22-SWDVT1C', 'MP.H02.023')
+

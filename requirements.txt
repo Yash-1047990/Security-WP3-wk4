@@ -1,0 +1,14 @@
+Hello and welcome, do you want to check out our website? Then here are some steps for you to follow to run it!
+
+-You will have to install a few packages in your terminal, you can do that by using the 
+    "pip install [insert name of package]" command!
+     
+     -Flask
+     
+
+
+-To run the website you will just have to put "python main.py" in the terminal!
+
+-To login you can use any of the names and passwords from users, but we suggest just using "mo" and "123" if you aren't an SLC'er  or use Kadir(name) and soep(password) if you are
+
+-There are 2 homepages for the website, base_side_bar is for the teachers and student.html is for the students.
